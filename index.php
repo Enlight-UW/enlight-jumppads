@@ -8,8 +8,61 @@
         <title>Jumppad Testbed</title>
     </head>
     <body>
-        <script src="js/jquery-1.8.2.min.js"></script>
+        <div class="container">
+            
+                <script src="js/jquery-1.8.2.min.js"></script>
+                <script src="js/bootstrap.min.js"></script>
 
-        <script src="js/bootstrap.min.js"></script>
+                <script src="jumppads.js"></script>
+
+                <h3>Configuration</h3>
+                <p>Specify the path to act.php on your local webserver:</p>
+                <input type="text" name="APITarget"
+                       value="http://localhost/enlight-webfront/php/act.php"
+                       style="width: 40em;" />
+                <br />
+
+                <a class="btn" href="#"
+                   onclick="apiTarget=$('#APITarget').val(); return false;">Update</a>
+
+                <h1>Test: Normal Operation</h1>
+                <p>
+                    Clicking the below buttons will invoke the standard action
+                    of each pad. There are currently 8 of them.
+                </p>
+                <table class="table">
+                    <tr>
+                        <th>Pad 1</th>
+                        <td>
+                            <a href="#" class="btn" onclick="return false;">1</a>
+                        </td>
+                        <td>
+                            <a href="#" class="btn" onclick="return false;">2</a>
+                        </td>
+                        <td>
+                            <a href="#" class="btn" onclick="return false;">3</a>
+                        </td>
+                        <td>
+                            <a href="#" class="btn" onclick="return false;">4</a>
+                        </td>
+                    </tr>
+                    <tr>
+                        <th>Pad 2</th>
+                        <td>
+                            <a href="#" class="btn" onclick="return false;">1</a>
+                        </td>
+                        <td>
+                            <a href="#" class="btn" onclick="return false;">2</a>
+                        </td>
+                        <td>
+                            <a href="#" class="btn" onclick="return false;">3</a>
+                        </td>
+                        <td>
+                            <a href="#" class="btn" onclick="return false;">4</a>
+                        </td>
+                    </tr>
+                </table>
+            
+        </div>
     </body>
 </html>
