@@ -20,10 +20,38 @@ var padLock;
  * this function will take care of calling the appropriate API handler locally.
  */
 function activate(valves) {
-    //clearTimeout(padLock);
-    //setTimeout(resetValves(), 3000);
+    clearTimeout(padLock);
+    
+    ajaxState(valves);
+    
+    padLock = setTimeout(resetValves, 3000);
 }
 
+/**
+ * Kill the valves back to all off.
+ */
+function resetValves() {
+    ajaxState(0);
+}
+
+function ajaxState(statez) {
+    $.ajax(
+    {
+        type: "POST",
+        url:apiTarget,
+        data: {
+            request: "setValveState",
+            STATE: statez
+        }
+    }).done(function(msg) {
+        var obj = $.parseJSON(msg);
+
+        //Check if we need to redirect to an error page.
+        if (!obj.success) {
+            alert("Failure detected");
+        }
+    });
+}
 
 //------------------------------------------------------------------------------
 //The functions below should be invoked when the corresponding pad is activated.
@@ -38,33 +66,33 @@ function activate(valves) {
 //for more information about this order.
 //------------------------------------------------------------------------------
 function doPad1_1() {
-    
+    activate(1);
 }
 
 function doPad1_2() {
-    
+    activate(2);
 }
 
 function doPad1_3() {
-    
+    activate(4);
 }
 
 function doPad1_4() {
-    
+    activate(8);
 }
 
 function doPad2_1() {
-    
+    activate(256);
 }
 
 function doPad2_2() {
-    
+    activate(512);
 }
 
 function doPad2_3() {
-    
+    activate(1024);
 }
 
 function doPad2_4() {
-    
+    activate(2048);   
 }
