@@ -11,8 +11,8 @@
 var apiKey = "XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX";
 var apiTarget = "http://localhost/enlight-webfront/php/act.php";
 
-//TODO: This will keep us from going over 3 seconds without activity before reset
-var padLock;
+//This will keep us from going over 3 seconds without activity before reset
+//var padLock;
 
 
 /**
@@ -20,11 +20,11 @@ var padLock;
  * this function will take care of calling the appropriate API handler locally.
  */
 function activate(valves) {
-    clearTimeout(padLock);
+  //  clearTimeout(padLock);
     
     ajaxState(valves);
     
-    padLock = setTimeout(resetValves, 3000);
+  //  padLock = setTimeout(resetValves, 3000);
 }
 
 /**
@@ -40,7 +40,7 @@ function ajaxState(statez) {
         type: "POST",
         url:apiTarget,
         data: {
-            request: "setValveState",
+            request: "toggleValveState",
             STATE: statez
         }
     }).done(function(msg) {
@@ -55,11 +55,13 @@ function ajaxState(statez) {
 
 //------------------------------------------------------------------------------
 //The functions below should be invoked when the corresponding pad is activated.
-//I think the philosophy behind these should be that a single activation of a
-//pad will toggle on those valves, and to reverse it, a user must wait for X
-//amount of seconds until after the last activation of a pad. That way, one can
-//chain multiple pads (and turn on a bunch of valves) and then wait a few
-//seconds and everything will turn off.
+//
+//The philosophy of these buttons is that, while a user is standing on them,
+//keep those valves active. Once the button is no longer being pressed, turn off
+//the valves. We'll accomplish this by just doing a toggle for the valves that
+//are specified, and we should be fine - just call the corresponding method
+//whenever the state of a button changes, and things should stay in snyc. If not
+//then reset the beaglebone or something.
 //
 //Specify a pattern by using integer representation. We have 24 valves total,
 //and the ordering in an integer is aligned to the LSB - see the Webfront code
