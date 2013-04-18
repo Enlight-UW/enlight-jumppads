@@ -9,7 +9,7 @@
  */
 
 var apiKey = "XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX";
-var apiTarget = "http://localhost/enlight-webfront/php/act.php";
+var apiTarget = "http://192.168.1.101/Clean2/enlight-webfront/php/act.php";
 
 //This will keep us from going over 3 seconds without activity before reset
 //var padLock;
@@ -68,33 +68,33 @@ function ajaxState(statez) {
 //for more information about this order.
 //------------------------------------------------------------------------------
 function doPad1_1() {
-    activate(1);
+    activate(3);
 }
 
 function doPad1_2() {
-    activate(2);
+    activate(12);
 }
 
 function doPad1_3() {
-    activate(4);
+    activate(48);
 }
 
 function doPad1_4() {
-    activate(8);
+    activate(192);
 }
 
 function doPad2_1() {
-    activate(256);
+    activate(3072);
 }
 
 function doPad2_2() {
-    activate(512);
+    activate(12288);
 }
 
 function doPad2_3() {
-    activate(1024);
+    activate(49152);
 }
 
 function doPad2_4() {
-    activate(2048);   
+    activate(196608);   
 }

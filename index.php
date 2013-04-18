@@ -14,7 +14,7 @@
             <script src="js/bootstrap.min.js"></script>
 
             <script src="jumppads.js"></script>
-
+            <div style="display:none;">
             <h3>Configuration</h3>
             <p>Specify the path to act.php on your local webserver:</p>
             <input type="text" id="APITarget"
@@ -30,9 +30,10 @@
                 Clicking the below buttons will invoke the standard action
                 of each pad. There are currently 8 of them.
             </p>
-            <table class="table">
+            </div>
+            <table class="table" style="font-size:72pt;">
                 <tr>
-                    <th>Pad 1</th>
+                   <!-- <th>Pad 1</th> -->
                     <td>
                         <a href="#" class="btn" onclick="doPad1_1(); return false;">1</a>
                     </td>
@@ -47,7 +48,7 @@
                     </td>
                 </tr>
                 <tr>
-                    <th>Pad 2</th>
+                   <!-- <th>Pad 2</th> -->
                     <td>
                         <a href="#" class="btn" onclick="doPad2_1(); return false;">1</a>
                     </td>
