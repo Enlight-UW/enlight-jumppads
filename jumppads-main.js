@@ -75,7 +75,7 @@ setup = function() {
     
     
     attachInterrupt(inputPin5, CHANGE, function(pin, value) {
-      updateStates(3072);
+      updateStates(786432);
     });
     
     attachInterrupt(inputPin6, CHANGE, function(pin, value) {

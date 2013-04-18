@@ -84,7 +84,7 @@ function doPad1_4() {
 }
 
 function doPad2_1() {
-    activate(3072);
+    activate(786432);
 }
 
 function doPad2_2() {
