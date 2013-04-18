@@ -17,7 +17,7 @@
 
             <h3>Configuration</h3>
             <p>Specify the path to act.php on your local webserver:</p>
-            <input type="text" name="APITarget"
+            <input type="text" id="APITarget"
                    value="http://localhost/enlight-webfront/php/act.php"
                    style="width: 40em;" />
             <br />
