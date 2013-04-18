@@ -1,0 +1,10 @@
+/**
+ * beaglebone.js
+ * 
+ * This is the file to be RUN on the beaglebone.
+ * 
+ */
+////////////////////////////////////////////////////////////////////////////////
+//HUMAN PREPROCESSOR DIRECTIVE - COPY/PASTE jumppads.js HERE BEFORE DEPLOYING.
+//Javascript is bad and can't do includes, so this is how we'll do it.
+////////////////////////////////////////////////////////////////////////////////
