@@ -59,5 +59,5 @@ void loop() {
   last7 = cur7;
   last8 = cur8;
   
-  delay(350);
+  delay(1000);
 }
