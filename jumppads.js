@@ -9,7 +9,7 @@
  */
 
 var apiKey = "XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX";
-var apiTarget = "http://192.168.1.101/Clean2/enlight-webfront/php/act.php";
+var apiTarget = "http://localhost/enlight-webfront/php/act.php";
 
 //This will keep us from going over 3 seconds without activity before reset
 //var padLock;
@@ -20,11 +20,11 @@ var apiTarget = "http://192.168.1.101/Clean2/enlight-webfront/php/act.php";
  * this function will take care of calling the appropriate API handler locally.
  */
 function activate(valves) {
-  //  clearTimeout(padLock);
+    //  clearTimeout(padLock);
     
     ajaxState(valves);
     
-  //  padLock = setTimeout(resetValves, 3000);
+//  padLock = setTimeout(resetValves, 3000);
 }
 
 /**
@@ -98,3 +98,44 @@ function doPad2_3() {
 function doPad2_4() {
     activate(196608);   
 }
+
+$(document).keyup(function(e) {
+    if (e.keyCode == 49) {
+        doPad1_1();
+    }
+    if (e.keyCode==50){
+        doPad1_2();    
+    }
+
+    if (e.keyCode==51){
+        doPad1_3();
+    }
+
+    if (e.keyCode==52) {
+        doPad1_4();
+    }
+
+    if (e.keyCode==53) {
+        doPad2_1();
+    }
+
+
+    if (e.keyCode==54) {
+        doPad2_2();   
+    }
+
+
+    if (e.keyCode==55) {
+        doPad2_3();
+    }
+
+    if (e.keyCode==56) {
+        doPad2_4();
+    }
+
+
+
+
+
+}
+);
